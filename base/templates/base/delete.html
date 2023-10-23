@@ -1,0 +1,23 @@
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'resources/css/delete.css' %}">
+{% endblock link %}
+
+{% block content %}
+<body>
+    <section>
+        <div class="delete">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1>DELETE:</h1>
+                    <label for="id">Are you sure you want to delete "{{obj}}"?</label>
+                    <div class="btn">
+                    <a class="link" href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+                      <input type="submit" value="Delete">
+                    </div>
+            </form>
+        </div>
+        
+    </section>
+</body>
+{% endblock content %}

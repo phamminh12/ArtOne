@@ -1,0 +1,109 @@
+html{
+    font-family: 'Lato', sans-serif;
+  }
+  
+  body {
+    background-image: linear-gradient(45deg, rgba(93, 162, 213, 0.8) 55%, rgba(144, 204, 244, 0.85)), url("../img/background5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+  
+  /* -------Slide-------------- */
+  #home{
+    /* animation-name: changeImage;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; */
+    animation: changeImage 10s ease-in-out infinite;
+  }
+  
+  /* @keyframes changeImage {
+    0% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background5.jpg");
+        
+    }
+    25% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background4.jpg");
+        
+    }
+    50% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background3.jpg");
+        
+    }
+    75% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background2.jpg");
+    }
+    100% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background1.jpg");
+    }
+  } */
+  
+
+  
+  form {
+    box-shadow: rgba(0,0,0,0.55) 0px 15px 15px ;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 700px;
+    max-height: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: -00px;
+    background-color:rgba(204,204,204,0.6);
+    border-radius: 8px;
+    
+
+  }
+  
+ 
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="file"] {
+    display: block;
+  }
+  
+  input[type="submit"] {
+    background-color: #4c8caf;
+    border: none;
+    padding: 10px 20px;
+    width: 30%;
+    padding: 5px;
+    margin-top: 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #fff;
+    color: #575757;
+  }
+  .btn a,input{
+    margin: 25px ;
+  }
+  .btn input{
+    border-radius: 6px;
+  }
+  .link{
+    margin-top: 16px;
+    text-decoration: none;
+    width: 40%;
+    padding: 5px;
+    border-radius: 10px;
+    color: #575757;
+    transition: .3s;
+  }
+  .link:hover{
+    color: #fff;
+  background-color:  #4c8caf;
+}
+ 

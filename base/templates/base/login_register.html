@@ -1,0 +1,81 @@
+{% block link %}
+{% load static %}
+{% if page == 'login' %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'resources/css/signin.css' %}">
+{% else %}
+{% if page == 'register' %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'resources/css/signup.css' %}">
+{% endif %}
+{% endif %}
+
+{% endblock link %}
+
+{% block content %}
+{% if page == 'login' %}
+<div class="container">
+    <div class="header">
+        <h2>Log In</h2>
+    </div>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="check">
+            <!-- <a href="" style="text-decoration: none;">Forgot password ?</a> -->
+        </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li style="list-style: none;" {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        
+        
+
+        <div class="btn">
+            <button id="btnRegister"><a href="{% url 'register' %}" style="text-decoration:none;color:white"> Register
+                </a></button>
+            <button id="btnLogin" type="submit"><a href="" style="text-decoration:none;color:white">Login </a></button>
+        </div>
+        <a class="link" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+    </form>
+</div>
+{% else %}
+{% if page == 'register' %}
+<div class="container">
+    <div class="header">
+        <h2>Register</h2>
+    </div>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form__group form-group">
+            <label for="room_name" style="font-weight: 300;">{{field.label}}</label>
+            {{field}}
+        </div>
+        {% endfor %}
+
+
+
+        <div class="btn">
+            <button><a href="{% url 'login' %}" style="text-decoration:none;color:white">Login</a></button>
+            <button type="submit"><a href="" style="text-decoration:none;color:white;pointer-events:none">Register</a></button>
+        </div>
+        <a class="link" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+    </form>
+</div>
+{% endif %}
+{% endif %}
+{% endblock content %}

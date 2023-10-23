@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <h1>{{picture.name}}</h1>
+    <p>@{{picture.host}}</p>
+    <p>{{picture.created|timesince}} ago</p>
+    {% if request.user == picture.host %}
+    <a href="{% url 'update-picture' picture.id %}">Update</a>
+    <a href="{% url 'delete-picture' picture.id %}">Delete</a>
+    {% endif %}
+    <br>
+    <img src="{{picture.image.url}}" alt="">
+    <p>{{picture.description}}</p>
+    <p>Likes: {{picture.likes.count}}</p>
+    <form action="{% url 'like-picture-detail' picture.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Like</button>
+    </form>
+
+
+    <div>
+        <h3>Comment</h3>
+        <hr>
+
+        {% for comment in picture_comments %}
+        <div>
+            {% if request.user == comment.user %}
+            <a href="{% url 'delete-comment' comment.id %}">Delete</a>
+            {% endif %}
+            <small>@{{comment.user}} | {{comment.created|timesince}} ago</small>
+            <p>{{comment.body}}</p>
+        </div>
+        {% endfor %}
+
+        {% if request.user.is_authenticated %}
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="body" placeholder="Write your comment...">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock content %}

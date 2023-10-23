@@ -1,0 +1,50 @@
+{% load static %}
+<nav>
+    <a href="{% url 'home' %}">
+        <img class="logo" src="{% static 'resources/img/logo.png' %}" alt="Logo">
+    </a>
+
+    <ul class="main-nav">
+        <li><a href="{% url 'discover' %}">Discover</a></li>
+        <li><a href="./news.html">News</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="loggin">
+            {% if request.user.is_authenticated %}
+            <button class="login">
+                <i class="fa-regular fa-circle-user"></i> User <i class="fa fa-angle-down" style="font-size:14px ;"></i>
+                <div class="dropdow">
+                    <ul style="list-style-type: none; ">
+                        <li><a href="{% url 'user-profile' request.user.id %}" style="border: none;margin-right:6px"><i
+                                    class="fa-regular fa-user"></i> {{request.user.username}} </a></li>
+                        <li><a href="{% url 'logout' %}" style="border: none;"><i
+                                    class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Logout</a></li>
+                    </ul>
+                </div>
+            </button>
+            {% else %}
+            <button class="login">
+                <i class="fa-regular fa-circle-user"></i> User <i class="fa fa-angle-down" style="font-size:14px ;"></i>
+                <div class="dropdow">
+                    <ul style="list-style-type: none; ">
+                        <li><a href="{% url 'login' %}" style="border: none;margin-right:6px"><i
+                                    class="fa-regular fa-user"></i> Login</a></li>
+                        <li><a href="{% url 'register' %}" style="border: none;"><i class="fa-solid fa-user-plus"></i>
+                                Register</a></li>
+                    </ul>
+                </div>
+            </button>
+            {% endif %}
+        </li>
+        <li>
+            <a href="{% url 'create-picture' %}" title="Upload paintings"><i class="fa-solid fa-square-plus"></i></a>
+        </li>
+    </ul>
+    <form id="search" action="{% url 'discover' %}" method="GET">
+        <title>Search</title>
+        <input type="text" name="q" placeholder="Searching for paintings...">
+    </form>
+    <i class="fa-solid fa-bars mobile-nav-icon"></i>
+    <!-- <i class="fa-solid fa-xmark"></i> -->
+</nav>

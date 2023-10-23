@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'resources/css/navbar.css' %}">
+{% endblock link %}
+
+{% block content %}
+
+<body>
+    <section class="product">
+        <h3>{{picture.name}}</h3>
+        <div class="datetime">
+            <div class="user">
+                <a href="{% url 'user-profile' picture.host.id %}"><img src="{{picture.host.avatar.url}}" style="width: 30px;" alt="">
+                    <span>@{{picture.host.name}}</span>
+                    <span>{{picture.created|timesince}} ago</span></a>
+            </div>
+            {% if request.user == picture.host %}
+            <div class="tools">
+                <a href="{% url 'update-picture' picture.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="{% url 'delete-picture' picture.id %}"><i class="fa-solid fa-trash-can"></i></a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="product-details">
+            <!-- <a href=""> -->
+            <img src="{{picture.image.url}}" alt="">
+            <!-- </a> -->
+
+
+        </div>
+        <div class="product doc">
+            <p>
+                {{picture.description}}
+            </p>
+            <div class="likes">
+                <form id="like" action="{% url 'like-picture-detail' picture.id %}" method="POST">
+                    {% csrf_token %}
+                    {% if request.user in picture.likes.all %}
+                    <button type="submit"><i class="fa-solid fa-heart"></i></button>
+                    {% else %}
+                    <button type="submit"><i class="fa-regular fa-heart"></i></button>
+                    {% endif %}
+                </form>
+                <span>Likes: {{picture.likes.count}}</span>
+                <span>Genre: {{picture.genre}}</span>
+            </div>
+        </div>
+    </section>
+    <section class="comment">
+        <div class="cmt-doc">
+            {% for comment in picture_comments %}
+            <div class="cmt-detail">
+                <div class="info_user">
+                    <a href="{% url 'user-profile' comment.user.id %}">
+                        <img src="{{comment.user.avatar.url}}" alt="">
+                        <span>@ {{comment.user}}</span>
+                    </a>
+                    <span>{{comment.created|timesince}} ago</span>
+                </div>
+                {% if request.user == comment.user %}
+                <a href="{% url 'delete-comment' comment.id %}"><i class="fa-solid fa-delete-left"></i></a>
+                {% endif %}
+                <p>{{comment}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <form class="comment-form" method="POST" action="">
+            {% csrf_token %}
+            <input class="comment-text" type="text" name="body" placeholder="Add comment...">
+        </form>
+    </section>
+    <footer>
+        <p>
+            Copyright &copy; 2023 by ROUU
+        </p>
+    </footer>
+</body>
+{% endblock content %}

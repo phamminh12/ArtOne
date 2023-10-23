@@ -1,0 +1,48 @@
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'resources/css/pictureform.css' %}">
+
+{% endblock link %}
+{% block content %}
+
+<body>
+    <section>
+        <div class="picture-form">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="header">
+                    <a href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i></a>
+                    <h1>POST</h1>
+                </div>
+                <div class="genre">
+                    <label for="genre">Genre:</label>
+                    <select id="category" name="genre">
+                        {% for genre in genres %}
+                        <option value="{{genre.name}}">{{genre.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="title">
+                    <label for="title">Title:</label>
+                    {{form.name}}
+                </div>
+                <label for="description">Description:</label>
+                <!-- <textarea id="content" name="content" rows="20" placeholder="Intro for your paintings...."></textarea> -->
+                {{form.description}}
+
+                <label class="upload-img" for="fileInput">Select picture to upload:</label>
+                <!-- <input type="file" name="image" id="fileInput" accept="image/*"> -->
+                {{form.image}}
+
+                <div class="submit">
+                    <button class="btn"><a href="{{request.META.HTTP_REFERER}}">Cancel</a></button>
+                    <input class="btn" type="submit" value="Upload">
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+{% endblock content %}

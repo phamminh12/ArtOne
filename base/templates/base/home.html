@@ -1,0 +1,228 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+<div class="clearfix"></div>
+        <div class="row">
+            <div class="heading-main-box">
+                <h1>Explore the world <br> of art with our<br> collection of paintings!</h1>
+                <a href="#about" class="btn">Tell me more</a>
+                <a href="#product" class="btn">Join us</a>
+            </div>
+        </div>
+    </header>
+    <section class="about-section" id="about">
+        <div class="row">
+            <h2>About us</h2>
+            <p class="p-long">
+                From my observation, most people enjoy hanging pictures of natural landscapes on the walls of their
+                homes. Looking at the spectacular views of rocky mountains, or the breezy and sparkling river flow, can
+                create a sense of well-being and peacefulness. Others, however, are more into portraits, whether of
+                themselves or their beloved ones.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-4 about-picture">
+                <img src="{% static 'resources/img/news2.jpeg' %}" alt="">
+                <p class="picture-title">Team Working</p>
+            </div>
+            <div class="col span-1-of-4 about-picture">
+                <img src="{% static 'resources/img/paint4.jpg' %}" alt="">
+                <p class="picture-title">Funny Class</p>
+            </div>
+            <div class="col span-1-of-4 about-picture">
+                <img src="{% static 'resources/img/news5.jpg' %}" alt="">
+                <p class="picture-title">Be Confident</p>
+            </div>
+            <div class="col span-1-of-4 about-picture">
+                <img src="{% static 'resources/img/background3.jpg' %}" alt="">
+                <p class="picture-title">All our friends</p>
+            </div>
+            <!-- <button class="btn-about">
+                Let's Talk
+            </button> -->
+        </div>
+    </section>
+    <!-- <section class="products-section" id="product">
+        <h2>Products</h2>
+        <div class="row">
+            <div class="col span-1-of-3">
+                <div class="product-box">
+                    
+                    <h3>Lorem, ipsum.</h3>
+                   %  
+                    {% static '<img src="resources/img/news2.jpeg" alt="" style="width: 100%;height:50%">'}
+        
+                    <a href="#" class="btn ">JOIN US</a>
+                </div>
+            </div>
+            <div class="col span-1-of-3" >
+                <div class="product-box " >
+                    <h3>Lorem, ipsum.</h3>
+                    <p class="product-price">12$ <span>/ month</span></p>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-check small-icon"></i>Lorem, ipsum.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check small-icon"></i>Lorem, ipsum.
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">JOIN US</a>
+                </div>
+            </div>
+            <div class="col span-1-of-3">
+                <div class="product-box">
+                    <h3>Lorem, ipsum.</h3>
+                    <p class="product-price">12$ <span>/ month</span></p>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-check small-icon"></i>Lorem, ipsum.
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check small-icon"></i>Lorem, ipsum.
+                        </li>
+                    </ul>
+                    <a href="#" class="btn">JOIN US</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="testimonials-section" id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="row">
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sunt enim vero dolorem iure,
+                    maiores necessitatibus? Id debitis laudantium omnis at molestiae, voluptatibus deserunt
+                    exercitationem nihil?
+                    <cite>
+                        <img src="{% static 'resources/img/Davinci1.jfif' %}" alt="">Lorem, ipsum dolor.
+                    </cite>
+                </blockquote>
+            </div>
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, molestiae dignissimos nihil
+                    cupiditate quidem rerum maiores quam expedita reprehenderit pariatur commodi aliquam at magni
+                    quaerat neque dolores porro.
+                    <cite>
+                        <img src="{% static 'resources/img/Manet1.jpeg' %}" alt="">Lorem, ipsum dolor.
+                    </cite>
+                </blockquote>
+            </div>
+            <div class="col span-1-of-3">
+                <blockquote>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis doloribus minus inventore
+                    possimus ducimus, harum culpa, distinctio eius quisquam quia, illum deserunt doloremque laboriosam?
+                    Explicabo, enim magnam.
+                    <cite>
+                        <img src="{% static 'resources/img/Van Gogh.jpg' %}" alt="">Lorem, ipsum dolor.
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+    <section class="sponsors-section" id="sponsors">
+        <h2>Sponsors</h2>
+        <div class="row">
+            <ul class="sponsors-showcase clearfix">
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="{% static 'resources/img/paint24.jpg' %}" alt="">
+                        <figcaption>Lorem.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="{% static 'resources/img/paint25.jpg' %}" alt="">
+                        <figcaption>Lorem.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="{% static 'resources/img/paint24.jpg' %}" alt="">
+                        <figcaption>Lorem.</figcaption>
+                    </figure>
+                </li>
+            </ul>
+            <ul class="sponsors-showcase clearfix">
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="{% static 'resources/img/paint25.jpg' %}" alt="">
+                        <figcaption>Lorem.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="{% static 'resources/img/paint24.jpg' %}" alt="">
+                        <figcaption>Lorem.</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img class="logo-sponsor" src="{% static 'resources/img/paint25.jpg' %}" alt="">
+                        <figcaption>Lorem.</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="row">
+            <div class="col span-1-of-3">
+                <ul class="information">
+                    <li><i class="fa-solid fa-location-dot small-icon"></i>Address: HN, VietNam, The Earth</li>
+                    <li><i class="fa-solid fa-envelope small-icon"></i>Email: supportpainting@gmail.com</li>
+                    <li><i class="fa-solid fa-phone small-icon"></i>Phone: 09135465489</li>
+                </ul>
+                <ul class="social-icons">
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-google-plus"></i></li>
+                </ul>
+            </div>
+            <div class="col span-2-of-3">
+                <form>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Message</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" class="btn" value="Send It">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>
+            Copyright &copy; 2023 by ROUU
+        </p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'resources/js/script.js' %}"></script>
+{% endblock content %}

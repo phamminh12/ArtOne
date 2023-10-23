@@ -1,0 +1,172 @@
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(45deg, rgba(93, 162, 213, 0.8) 55%, rgba(144, 204, 244, 0.85)), url("../img/background5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 140vh;
+}
+
+/* -------Slide-------------- */
+#home {
+  /* animation-name: changeImage;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; */
+  animation: changeImage 10s ease-in-out infinite;
+}
+
+/* @keyframes changeImage {
+    0% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background5.jpg");
+        
+    }
+    25% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background4.jpg");
+        
+    }
+    50% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background3.jpg");
+        
+    }
+    75% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background2.jpg");
+    }
+    100% { 
+        background-image: linear-gradient(45deg,rgba(93,162,213,0.8) 55%,rgba(144,204,244,0.85)), url("../img/background1.jpg");
+    }
+  } */
+
+
+
+form {
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 15px 15px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 700px;
+  max-height: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: -00px;
+  background-color: #ccc;
+
+}
+
+.header{
+  display: flex;
+}
+
+.header a{
+  color: #fc5c5c;
+  font-size: 24px;
+  height: 28px;
+  width: 28px;
+  margin-top: 26px;
+  transition: .3s;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.header a:hover{
+  color: #fff;
+  background-color: #5DA2D5;
+}
+
+.header h1{
+  color:#fc5c5c; 
+  font-size: 30px;
+  text-align: center;
+  margin: 28px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+#content {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#fileInput {
+  margin-bottom: 30px;
+}
+
+
+.title input {
+  width: 32%;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 30px auto;
+  font-size: 16px;
+}
+
+.title label {
+  margin: -17px auto;
+}
+
+.genre {
+  margin-top: 30px;
+}
+.genre label {
+  margin: -15px auto;
+}
+.genre select {
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.submit{
+  margin: 20px 0;
+}
+
+.submit a{
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: block;
+  padding: 20px 30px; 
+  transition: .3s;
+}
+
+.submit button:hover{
+  background-color: #F78888;
+}
+
+.submit button:hover a{
+  color: #fff;
+}
+
+.btn{
+  border: none;
+  margin-left: 24%;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: .3s;
+  padding: 0;
+}
+
+input[type="submit"] {
+  background-color: #4c8caf;
+  color: white;
+  cursor: pointer;
+  padding: 20px 30px;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #90CCF4;
+}

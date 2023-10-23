@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <a href="{% url 'create-picture' %}">Post your picture</a>
+
+    {% for picture in pictures %}
+    <div>
+        <span>@<a href="{% url 'user-profile' picture.host.id %}">{{picture.host.username}}</a></span> <br>
+        {% if request.user == picture.host %}
+        <a href="{% url 'update-picture' picture.id %}">Update</a>
+        <a href="{% url 'delete-picture' picture.id %}">Delete</a>
+        {% endif %}
+        <h5>{{picture.id}} -- <a href="{% url 'picture' picture.id %}">{{picture.name}}</a></h5>
+        <p>Genre: {{picture.genre}}</p>
+        <p>{{picture.created|timesince}} ago</p>
+        <img src="{{picture.image.url}}" alt="" style="width: 36%">
+        <br>
+        <p>Likes: {{picture.likes.count}}</p>
+        {% if request.user in picture.likes.all %}
+        <form action="{% url 'like-picture-home' picture.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Unlike</button>
+        </form>
+        {% else %}
+        <form action="{% url 'like-picture-home' picture.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Like</button>
+        </form>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %} 
