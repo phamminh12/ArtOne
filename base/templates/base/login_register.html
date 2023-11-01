@@ -47,7 +47,7 @@
                 </a></button>
             <button id="btnLogin" type="submit"><a href="" style="text-decoration:none;color:white">Login </a></button>
         </div>
-        <a class="link" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+        <a class="link" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i> Back Page </a>
     </form>
 </div>
 {% else %}
@@ -73,7 +73,7 @@
             <button><a href="{% url 'login' %}" style="text-decoration:none;color:white">Login</a></button>
             <button type="submit"><a href="" style="text-decoration:none;color:white;pointer-events:none">Register</a></button>
         </div>
-        <a class="link" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i> Back to Home </a>
+        <a class="link" href="{{request.META.HTTP_REFERER}}"><i class="fa-solid fa-arrow-left"></i> Back Page </a>
     </form>
 </div>
 {% endif %}

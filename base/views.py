@@ -92,6 +92,10 @@ def discover(request):
     return render(request, 'base/discover.html', context)
 
 
+def news(request):
+    return render(request, 'base/news.html')
+
+
 
 # @login_required(login_url='login')
 def picture(request, pk):

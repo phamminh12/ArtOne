@@ -702,6 +702,134 @@ input[type=submit]{
     padding: 30px;
     
 }
+/* ----------------------------NEWS--------- */
+.news-title p {
+    border-bottom: 3px solid cornflowerblue;
+}
+
+
+.news-picture1 img {
+
+    padding: 5px;
+}
+
+.news-picture1 a,
+h3 {
+    color: #333;
+    font-size: 25px;
+    line-height: 48px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 900;
+
+}
+
+.news-picture1 p {
+    line-height: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.news-picture2 a {
+    text-decoration: none;
+    color: #292929;
+}
+
+.news-picture2 {
+
+    padding-left: 16px;
+    margin-left: 16px;
+    border-left: 1px solid #ebebeb;
+}
+
+.pic1 {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+    color: #292929;
+    display: block;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.pic2 {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+    color: #292929;
+    display: block;
+}
+
+.news-picture1 a:hover,
+.news-picture2 a:hover,
+.news-picture-row2 a:hover,
+.pic-doc a:hover {
+    color: #5da2d5;
+}
+
+.news-picture-row2 {
+    padding-top: 24px;
+    border-top: 1px solid #ebebeb;
+}
+
+.news-picture-row2 img {
+    width: 262px;
+    height: 156px;
+    margin-right: 32px;
+
+}
+
+.news-picture-row2 a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    color: #292929;
+    display: block;
+}
+.pic8 img{
+    
+    max-width: 50%; 
+    margin-right: 10px;
+    border: 1px solid #ebebeb;
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.4);
+     
+}
+.pic8{
+  
+    display: flex;
+    align-items: flex-start;
+    margin: 40px;
+    padding: 20px;
+    border-bottom: 2px solid #ebebeb;
+}
+.pic-doc {
+    display: flex;
+    flex-direction: column;
+}
+.pic-doc a{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #292929;
+    margin-bottom: 8px;
+    display: block;
+    text-decoration: none;
+}
+.pic-doc li{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #454545;
+    padding-left: 14px;
+    display: block;
+    position: relative;
+}
 
 /* ---------Phan Trang  news -------*/
 .pagination {
