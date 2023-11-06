@@ -6,7 +6,7 @@
 {% endblock link %}
 
 {% block content %}
-<h3 style="position: relative; left:260px; top:30px;color:rgb(114, 171, 171);font-weight:900">DISCOVER</h3>
+<h3 style="position: relative; left:-220px; top:30px;color:rgb(114, 171, 171);font-weight:900">DISCOVER</h3>
 <section class="section-discover">
     {% for group in groups %}
     <div class="row">
@@ -92,6 +92,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
 <script src="vendors/js/jquery.waypoints.min.js"></script>
-<script src="resources/js/script.js"></script>
+<script src="{% static 'resources/js/script.js' %}"></script>
+
 
 {% endblock content %}
