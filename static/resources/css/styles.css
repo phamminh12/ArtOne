@@ -1128,7 +1128,7 @@ input[type=text].comment-text::placeholder{
 /* --------------------- */
 /* --------PROFILE------ */
 /* --------------------- */
-.avata img{
+/* .avata img{
     width: 5%;
     border-radius: 50%;
 }
@@ -1159,4 +1159,99 @@ input[type=text].comment-text::placeholder{
     left: 460px;
     border-radius: 15px;
     border: 1px solid;  
+} */
+
+/* -------------------------- */
+/* --------PROFILE PAGE------ */
+/* -------------------------- */
+.profile-page{
+    margin-top: 36px;
+    position: absolute;
+    left: 200px;
+}
+.avt img{
+    border:  solid;
+    border-radius: 50%;
+    
+}
+.folower p ,span{
+    font-weight: 700;
+    font-size: 15px;
+    
+}
+.folower {
+    border-bottom: 1px solid #696464;
+    margin: 20px 0px;
+}
+.content{
+    margin: 20px;
+    
+}
+.content p{
+    color: #848181;
+    font-size: 15px;
+    line-height: 20px;
+}
+.btn-edit button{
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    font-size: 12px;
+    background-color: rgb(33, 13, 119);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn-edit button:hover{
+    background-color: #5DA2D5;
+}
+.avt h4{
+    font-family: Ago;
+    font-weight: 600;
+    margin: 10px;
+    
+}
+.PR2{
+    position: relative;
+    left: 70px;
+}
+.imgPR{
+    width: 880px;
+}
+.imgPR img{
+    width: 185px;
+    height: 148px;
+    margin: 20px 16px 0px 16px;
+    
+    border-radius: 20px;
+    box-shadow: 5px 3px #888888;
+    
+    
+}
+.imgPR a{
+    /* text-decoration: none;
+    position: relative;
+    bottom: 15px;
+    left: 13px; */
+    text-decoration: none;
+}
+
+.imgPR h5{
+    text-align: center;
+}
+
+.bntFL button{
+    width: 90px;
+    height: 40px;
+    color: #fff;
+    background-color: #c75377;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.bntFL button:hover{
+    background-color: rgb(216, 138, 189);
+    
 }

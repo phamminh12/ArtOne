@@ -1,60 +1,75 @@
 {% extends 'main.html' %}
 
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'resources/css/navbar.css' %}">
+{% endblock link %}
+
 {% block content %}
 
-<div>
-    <h3>{{user.username}}</h3>
-    <img src="{{user.avatar.url}}" alt="" style="width:100px; height: 100px">
-    <p>@{{user.username}}</p>
-    <p>email: {{user.email}}</p>
-    <p>Bio: {{user.bio}}</p>
-    {% if request.user == user %}
-    <a href="{% url 'update-user' %}">Edit Profile</a> 
-    {% endif %}
+<div class="row profile-page">
+    <div class="col span-1-of-4 Profile" style="display: flex;">
+        <div class="PR1" style="text-align: center;">
 
-    {% for picture in pictures %}
-    <section class="product">
-        <h3>{{picture.name}}</h3>
-        <div class="datetime">
-            <div class="user">
-                <a href="{% url 'user-profile' picture.host.id %}"><img src="{{picture.host.avatar.url}}" style="width: 30px;" alt="">
-                    <span>@{{picture.host.name}}</span>
-                    <span>{{picture.created|timesince}} ago</span></a>
+            <div class="avt">
+                <a href=""><img src="{{user.avatar.url}}" alt="" style="width:50% ;"></a>
+                <h4>{{user}}</h4>
+                <p style="font-size: 17px;font-weight: 200;">@{{user.username}}</p>
             </div>
-            {% if request.user == picture.host %}
-            <div class="tools">
-                <a href="{% url 'update-picture' picture.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="{% url 'delete-picture' picture.id %}"><i class="fa-solid fa-trash-can"></i></a>
+
+            <div class="folower" style="display: flex;">
+                <div class="fl1" style="margin:5px 15px">
+                    <p>0</p>
+                    <span>Folower</span>
+                </div>
+                <div class="fl2" style="margin:5px 15px">
+                    <p>2</p>
+                    <span>Folowing</span>
+                </div>
+                <div class="fl3" style="margin:5px 15px">
+                    <p>3</p>
+                    <span>Likes</span>
+                </div>
+            </div>
+
+            <div class="content">
+                <p>{{user.bio}} </p>
+            </div>
+            {% if request.user == user %}
+            <div class="btn-edit">
+                <a href="./Edit-Profile.html"><button>Edit Profile</button></a>
             </div>
             {% endif %}
         </div>
-        <div class="product-details">
-            <!-- <a href=""> -->
-            <img src="{{picture.image.url}}" alt="">
-            <!-- </a> -->
 
+        <div class="PR2">
+            <div class="listPR" style="display: flex;justify-content: space-around;">
+                <div class="text1" style="position: relative;right: 140px;">
 
-        </div>
-        <div class="product doc">
-            <p>
-                {{picture.description}}
-            </p>
-            <div class="likes">
-                <form id="like" action="{% url 'like-picture-detail' picture.id %}" method="POST">
-                    {% csrf_token %}
-                    {% if request.user in picture.likes.all %}
-                    <button type="submit"><i class="fa-solid fa-heart"></i></button>
-                    {% else %}
-                    <button type="submit"><i class="fa-regular fa-heart"></i></button>
-                    {% endif %}
-                </form>
-                <span>Likes: {{picture.likes.count}}</span>
-                <span>Genre: {{picture.genre}}</span>
+                    <b>{{user.username}}'s Posts</b>
+                </div>
+                <div class="bntFL" style="position: relative;left: 120px;">
+                    <a href=""><button>Follow</button></a>
+                </div>
             </div>
+            <div class="imgPR" style="display: flex; flex-wrap: wrap;">
+                {% for picture in pictures %}
+                <a href="{% url 'picture' picture.id %}" class="imgPR1">
+                    <img src="{{picture.image.url}}" alt="">
+                    <h5>{{picture.name}}</h5>
+                </a>
+                {% endfor %}
+            </div>
+
+
         </div>
-    </section>
-    {% endfor %}
-    
+
+
+
+
+    </div>
+
+
 </div>
 
 {% endblock content %}

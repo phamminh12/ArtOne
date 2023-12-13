@@ -250,6 +250,7 @@ def like_picture_home(request, pk):
 @login_required(login_url='login')
 def like_picture_detail(request, pk):
     picture = Picture.objects.get(id=pk)
+    # like = Like.objects.get(id=pk)
     user = request.user
     if request.method == 'POST':
         if request.user in picture.likes.all():
