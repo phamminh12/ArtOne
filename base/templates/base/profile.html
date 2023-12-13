@@ -37,7 +37,7 @@
             </div>
             {% if request.user == user %}
             <div class="btn-edit">
-                <a href="./Edit-Profile.html"><button>Edit Profile</button></a>
+                <a href="{% url 'update-user' %}"><button>Edit Profile</button></a>
             </div>
             {% endif %}
         </div>

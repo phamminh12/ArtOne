@@ -1,0 +1,273 @@
+{% extends 'main.html' %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'resources/css/navbar.css' %}">
+{% endblock link %}
+
+{% block content %}
+
+
+   
+    <h3 style="position: relative;right:230px;top:30px;color:rgb(114, 171, 171);font-weight:900">Blog</h3>
+    <section>
+        <div class="row">
+            <div class="col span-1-of-4 blog-1">
+                <div class="list">
+
+                    <h3 style="display: flex;">Danh Muc</h3>
+                    <span>Nhom bai viet</span>
+                    <div class="dropdow-blog">
+                        <p>Tất cả <i class="fa fa-angle-down"
+                                style="font-size:14px ; margin-left:100px;position: relative;bottom:15px;"></i></p>
+                        <div class="dropdow--menu" style="width: 50%;
+                        height: 300%;
+                        display: none;
+                        font-size: 25px;
+                        font-family: 'Lato', sans-serif;
+                        font-weight: bold;
+                        border: 1px dotted;
+                        padding: 16px 7px;
+                        position: relative;
+                        top: 57px; ">
+                            <ul>
+                                <li style="list-style: none;"><a href="">Tất cả </a> </li>
+                                <li style="list-style: none;"><a href="">Tỉ tê kể chuyện</a></li>
+                                <li style="list-style: none;"><a href="">Các thông tin cần lưu ý</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col span-1-of-4 blog-2">
+                <div class="blog-picture">
+                    <img src="{% static 'resources/img/paint48.jpg'%}" style="width: 310px; height:252px" alt="">
+                    <a href="">7 Inspiring Artists Who Blog - How to Sell Art Online |
+                        Online Marketing for Artists </a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture">
+                    <img src="{% static 'resources/img/paint41.jpg'%}" style="width: 310px;height:272px" alt="">
+                    <a href="">7 Famous Painting Techniques You'll Want to Try | Artists Network</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture">
+                    <img src="{% static 'resources/img/paint42.jpg'%}" alt="">
+                    <a href="">Tips to Create a Perfect Landscape Painting | Blog | Esca ..</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture">
+                    <img src="{% static 'resources/img/paint43.jpg'%}" alt="">
+                    <a href="">Art Blog | Paintings, Pop Culture and Music - Lobo Pop Art</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture">
+                    <img src="{% static 'resources/img/paint44.jpg'%}" style="height: 353px;" alt="">
+                    <a href="">Art On Paper: Everything You Need To Know – ART GODA</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col span-1-of-4 blog-2">
+                <div class="blog-picture2">
+                    <img src="{% static 'resources/img/paint45.jpg'%}" alt="">
+                    <a href="">Premium Photo | Epic landscape forest water river sunset digital illustration painting
+                        artwork scene</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture2">
+                    <img src="{% static 'resources/img/paint46.jpg'%}" style="height: 325px;" alt="">
+                    <a href="">10 Modernist Art Movements | Britannica</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture2">
+                    <img src="{% static 'resources/img/paint44.jpg'%}" alt="">
+                    <a href="">Latest Paintings and Client Comments | David Schor - Blog</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture2">
+                    <img src="{% static 'resources/img/paint48.jpg' %}" alt="">
+                    <a href="">Rock Painting Ideas to Get You Started! - Chalkola - Chalkola Art Supply</a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+                <div class="blog-picture2">
+                    <img src="{% static 'resources/img/paint45.jpg'%}" alt="">
+                    <a href="">How to Paint Like Edgar Payne - Samuel Earp Artist
+                    </a>
+                    <div class="blog--icon">
+                        <i class="fa-regular fa-message"></i>
+                        <p style="margin-right: 120px;">0 bình luận</p>
+                        <i class="fa-solid fa-share"></i>
+                        <p>Chia sẻ</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col span-1-of-4 blog-4 ">
+                <h3>Bài viết nổi bật </h3>
+                <div class="blog-doc">
+                    <span>01 <a href="">
+                            Team building (online) mùa dịch cùng Tipsy Art
+                        </a></span>
+
+                </div>
+                <div class="blog-doc">
+                    <span>02<a href="">
+                            Chuyện lời nói chẳng mất tiền mua
+                        </a></span>
+                </div>
+                <div class="blog-doc">
+                    <span>03<a href="">
+
+                            Bình thường kiểu Tipsy Art
+                        </a></span>
+                </div>
+                <div class="blog-doc">
+                    <span>04<a href="">
+
+                            Thành quả workshop hướng dẫn vẽ tranh online team building mùa dịch tại Tipsy Art
+                        </a></span>
+                </div>
+                <div class="blog-doc">
+                    <span>05<a href="">
+                            Hướng dẫn an toàn mùa COVID 19 tại Tipsy Art Studio
+                        </a></span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="pagination">
+            <a href="#" class="page-number">1</a>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <a href="#" class="page-number">...</a>
+            <!-- Các số trang khác -->
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="row">
+            <div class="col span-1-of-3">
+                <ul class="information">
+                    <li><i class="fa-solid fa-location-dot small-icon"></i>Address: HN, VietNam, The Earth</li>
+                    <li><i class="fa-solid fa-envelope small-icon"></i>Email: supportpainting@gmail.com</li>
+                    <li><i class="fa-solid fa-phone small-icon"></i>Phone: 09135465489</li>
+                </ul>
+                <ul class="social-icons">
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-google-plus"></i></li>
+                </ul>
+            </div>
+            <div class="col span-2-of-3">
+                <form>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Message</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" class="btn" value="Send It">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+         $('.dropdown-blog').click(
+            function () {
+                $('.dropdown--menu').slideToggle(200);
+            }
+        )
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'resources/js/script.js' %}"></script>
+
+    {% endblock content %}
+
+
+
+
+
+    

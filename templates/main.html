@@ -23,12 +23,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'vendors/css/grid.css' %}">
     <link rel="stylesheet" href="{% static 'resources/css/queries.css' %}">
+   
     {% block link %}
 
     {% endblock link %}
-    {% if not included_signin and not included_signup and not included_pictureform %}
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'resources/css/styles.css' %}">
+    {% if not included_signin and not included_signup and not included_pictureform and not included_editprofile %}
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'resources/css/styles.css' %}">
     {% endif %}
 </head>
 

@@ -95,7 +95,8 @@ def discover(request):
 def news(request):
     return render(request, 'base/news.html')
 
-
+def blog(request):
+    return render(request,'base/blog.html')
 
 # @login_required(login_url='login')
 def picture(request, pk):

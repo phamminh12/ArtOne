@@ -22,5 +22,7 @@ urlpatterns = [
     path('update-user/', views.updateUser, name="update-user"),
 
     path('like-home/<str:pk>/', views.like_picture_home, name="like-picture-home"),
-    path('like-detail/<str:pk>/', views.like_picture_detail, name="like-picture-detail")
+    path('like-detail/<str:pk>/', views.like_picture_detail, name="like-picture-detail"),
+    
+    path('Blog',views.blog,name="blog")
 ]
