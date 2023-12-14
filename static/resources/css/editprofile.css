@@ -7,7 +7,7 @@ body{
 }
 .profile-form {
     width: 550px;
-    height: 650px;
+    height: 800px;
     padding: 50px;
     margin: 0 auto;
     background-color: rgba(216, 227, 232, 1);
@@ -39,9 +39,11 @@ body{
     cursor: pointer;
 }
 .avatar-container img{
+    margin-top: 12px;
     width: 170px;
     height: 170px;
    margin-bottom: 20px;
+    border-radius: 24px;
 }
 .btn-EDIT{
     display: flex;
@@ -50,4 +52,13 @@ body{
 .btn-EDIT button{
     width: 120px;
     background-color: #999;
+}
+.btn-EDIT > input{
+    width: 120px;
+    background-color: #999;
+    color: #fff;
+}
+.btn-EDIT button a {
+    text-decoration: none;
+    color: #fff;
 }

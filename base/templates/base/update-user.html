@@ -8,9 +8,9 @@
 {% block content %}
 
     
-    <section class="profile-form">
+    <!-- <section class="profile-form">
         <h2>Edit Profile</h2>
-        <form id="profileForm">
+        <form id="profileForm" action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="userName">Tên:</label>
             <input type="text" id="userName" name="userName" placeholder="Nhập tên của bạn" required>
@@ -31,20 +31,54 @@
                 <button class="btn" style="margin-bottom: 20px;">Tải ảnh lên</button>
             </div>
             <div class="btn-EDIT">
-                <button type="button" >Cancel</button>
-                <button type="button" onclick="saveProfile()">Upload</button>
+                <button type="button">
+                    <a href="{{request.META.HTTP_REFERER}}">Cancel</a>
+                </button>
+                <button type="submit" onclick="saveProfile()">Upload</button>
+            </div>
+        </form>
+    </section> -->
+
+    <section class="profile-form">
+        <h2>Edit Profile</h2>
+        <form id="profileForm" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="userName">Tên:</label>
+            <!-- <input type="text" id="userName" name="userName" placeholder="Nhập tên của bạn" required> -->
+            {{form.name}}
+
+            <label for="userName">Username:</label>
+            <!-- <input type="text" id="userName" name="userName" placeholder="Nhập tên của bạn" required> -->
+            {{form.username}}
+
+            <label for="userEmail">Email:</label>
+            <!-- <input type="email" id="userEmail" name="userEmail" placeholder="Nhập địa chỉ email của bạn" required> -->
+            {{form.email}}
+
+            <label for="userEmail">Bio:</label>
+            <!-- <input type="text" id="userName" name="userName" placeholder="Nhập Bio" required> -->
+            {{form.bio}}
+
+            <div class="avatar-container">
+                <img src="{{user.avatar.url}}" alt="Avatar" class="avatar" id="avatar">
+                <div class="upload-btn-wrapper">
+                    <label for="userAvatar">Avatar:</label>
+                    {{form.avatar}}
+                </div>
+            </div>
+            <div class="btn-EDIT">
+                <button type="button">
+                    <a href="{{request.META.HTTP_REFERER}}">Cancel</a>
+                </button>
+                <button type="submit" value="Update"> Update </button>
             </div>
         </form>
     </section>
-    
-
 
 <script>
     function saveProfile() {
         alert("lưu thành công ! ");
     }
 </script>
-
-
 
 {% endblock content %}

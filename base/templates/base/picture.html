@@ -38,12 +38,12 @@
                 <form id="like" action="{% url 'like-picture-detail' picture.id %}" method="POST">
                     {% csrf_token %}
                     {% if request.user in picture.likes.all %}
-                    <button type="submit"><i class="fa-solid fa-heart"></i></button>
+                    <button type="submit" id="likeButton"><i class="fa-solid fa-heart"></i></button>
                     {% else %}
-                    <button type="submit"><i class="fa-regular fa-heart"></i></button>
+                    <button type="submit" id="likeButton"><i class="fa-regular fa-heart"></i></button>
                     {% endif %}
                 </form>
-                <span>Likes: {{picture.likes.count}}</span>
+                <span id="likeCount">Likes: {{picture.likes.count}}</span>
                 <span>Genre: {{picture.genre}}</span>
             </div>
         </div>
@@ -77,4 +77,28 @@
         </p>
     </footer>
 </body>
+<script>
+    $(document).ready(function () {
+        // Bắt sự kiện click vào nút like
+        $('#likeButton').on('click', function () {
+            var pictureId = $(this).data('picture-id');
+    
+            // Thực hiện AJAX request
+            $.ajax({
+                url: '/picture/' + pictureId + '/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    // Cập nhật giao diện người dùng dựa trên kết quả JSON
+                    $('#likeCount').text(data.likes_count);
+                    window.location.href = data.redirect_url;
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        });
+    });
+    </script>
+    
 {% endblock content %}

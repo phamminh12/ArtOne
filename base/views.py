@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from .models import Picture, Comment, Genre, User, Like
 from .forms import PictureForm, UserForm, MyUserCreationForm
 
@@ -118,10 +119,13 @@ def picture(request, pk):
 def userProfile(request, pk):
     user = User.objects.get(id=pk)
     pictures = user.picture_set.all()
+    total_likes = 0
+    for picture in pictures:
+        total_likes += picture.likes.count()
     picture_comments = user.comment_set.all()
     genres = Genre.objects.all()
     context = {'user': user, 'pictures': pictures,
-               'picture_comments': picture_comments, 'genres': genres}
+               'picture_comments': picture_comments, 'genres': genres, 'total_likes': total_likes}
     return render(request, 'base/profile.html', context)
     
 
@@ -230,7 +234,7 @@ def updateUser(request):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('user-profile', pk=user.id)
+            return redirect('user-profile', user.id)
         
     context = {'form': form}
     return render(request, 'base/update-user.html', context)
@@ -259,3 +263,22 @@ def like_picture_detail(request, pk):
         else:
             picture.likes.add(user)
     return redirect('picture', pk=pk)
+
+# @login_required(login_url='login')
+# def like_picture_detail(request, pk):
+#     picture = Picture.objects.get(id=pk)
+#     user = request.user
+#     if request.method == 'POST':
+#         if request.user in picture.likes.all():
+#             picture.likes.remove(user)
+#             likes_count = picture.likes.count() - 1
+#         else:
+#             picture.likes.add(user)
+#             likes_count = picture.likes.count() + 1
+#     response_data = {'likes_count': likes_count}
+
+#     # Thêm URL chuyển hướng vào response_data
+#     response_data['redirect_url'] = reverse('picture', args=[pk])
+
+#     return JsonResponse(response_data)
+#     # return JsonResponse({'likes_count':likes_count})
