@@ -8,7 +8,7 @@ from django.urls import reverse
 from .models import Picture, Comment, Genre, User, Like
 from .forms import PictureForm, UserForm, MyUserCreationForm
 
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 
 # from more_itertools import chunked
 from math import ceil
@@ -17,6 +17,7 @@ from math import ceil
 # m > f > v > u
 
 # @csrf_protect
+@csrf_exempt
 def loginPage(request):
     page = 'login'
     if request.user.is_authenticated:
