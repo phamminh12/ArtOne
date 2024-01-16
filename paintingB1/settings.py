@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k@ww+4m9(70pibsqf74jsfknn88fvqf43-(!qrz9!k141m5%t-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['art-one.onrender.com', 'localhost', '127.0.0.1']
 
