@@ -8,13 +8,15 @@ from django.urls import reverse
 from .models import Picture, Comment, Genre, User, Like
 from .forms import PictureForm, UserForm, MyUserCreationForm
 
+from django.views.decorators.csrf import csrf_protect
+
 # from more_itertools import chunked
 from math import ceil
 
 # Create your views here.
 # m > f > v > u
 
-
+@csrf_protect
 def loginPage(request):
     page = 'login'
     if request.user.is_authenticated:
