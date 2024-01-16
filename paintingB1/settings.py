@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-k@ww+4m9(70pibsqf74jsfknn88fvqf43-(!qrz9!k141m5%t-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['art-one.onrender.com', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['art-one.onrender.com', 'localhost', '127.0.0.1']
+CORS_ALLOWED_ORIGINS = [
+    "https://art-one.onrender.com",
+    'localhost', '127.0.0.1'
+]
 
 
 # Application definition
@@ -53,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'base.middleware.DisableCacheMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'paintingB1.urls'
