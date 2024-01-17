@@ -49,6 +49,7 @@ def logoutUser(request):
     return redirect('home')
 
 
+@csrf_exempt
 def registerPage(request):
     page = 'register'
     form = MyUserCreationForm()
@@ -103,6 +104,7 @@ def blog(request):
     return render(request,'base/blog.html')
 
 # @login_required(login_url='login')
+@csrf_exempt
 def picture(request, pk):
     picture = Picture.objects.get(id=pk)
     picture_comments = picture.comment_set.all()
@@ -131,7 +133,7 @@ def userProfile(request, pk):
                'picture_comments': picture_comments, 'genres': genres, 'total_likes': total_likes}
     return render(request, 'base/profile.html', context)
     
-
+@csrf_exempt
 @login_required(login_url='login')
 def createPicture(request):
     form = PictureForm()
@@ -160,6 +162,7 @@ def createPicture(request):
     return render(request, 'base/picture_form.html', context)
 
 
+@csrf_exempt
 @login_required(login_url='login')
 def updatePicture(request, pk):
     picture = Picture.objects.get(id=pk)
@@ -202,6 +205,7 @@ def updatePicture(request, pk):
     return render(request, 'base/picture_form.html',context)
 
 
+@csrf_exempt
 @login_required(login_url='login')
 def deletePicture(request, pk):
     picture = Picture.objects.get(id=pk)
@@ -215,6 +219,7 @@ def deletePicture(request, pk):
     return render(request, 'base/delete.html', {'obj': picture})
 
 
+@csrf_exempt
 @login_required(login_url='login')
 def deleteComment(request, pk):
     comment = Comment.objects.get(id=pk)
@@ -228,6 +233,7 @@ def deleteComment(request, pk):
     return render(request, 'base/delete.html', {'obj': comment})
 
 
+@csrf_exempt
 @login_required(login_url='login')
 def updateUser(request):
     user = request.user
@@ -243,6 +249,7 @@ def updateUser(request):
     return render(request, 'base/update-user.html', context)
 
 
+@csrf_exempt
 @login_required(login_url='login')
 def like_picture_home(request, pk):
     picture = Picture.objects.get(id=pk)
@@ -255,6 +262,7 @@ def like_picture_home(request, pk):
     return redirect('home')
 
 
+@csrf_exempt
 @login_required(login_url='login')
 def like_picture_detail(request, pk):
     picture = Picture.objects.get(id=pk)
